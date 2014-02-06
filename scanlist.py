@@ -6,6 +6,7 @@
 import ipaddress
 from array import *
 import re
+import sys, getopt
 
 def expandrange( range ):  #-------------------------------------
  netstart = unicode(range.split('-')[0].rstrip())
@@ -46,6 +47,28 @@ def validateip( line ): #--------------------------------------------
   else:
    invalid.append(ip)
 
+def main(argv): #-------------------------------------
+
+  inputfile = ''
+
+  try:
+   opts, args = getopt.getopt(argv,"hi:",["ifile="])
+  except getopt.GetoptError:
+   print 'scanlist.py -i <inputfile>'
+   sys.exit(2)
+  for opt, arg in opts:
+   if opt == '-h':
+    print 'scanlist.py -i <inputfile>'
+    sys.exit()
+   elif opt in ("-i", "--ifile"):
+    inputfile = arg
+
+  return inputfile
+
+if __name__ == "__main__":
+   filename = main(sys.argv[1:])
+  
+
 # create arrays that are going to store our ipaddresses
 validv4 = []
 validv6 = []
@@ -53,7 +76,7 @@ invalid = []
 
 # main()
 
-f = open('test.txt')
+f = open(filename)
 
 for line in f:
 	match = re.search('-',line)

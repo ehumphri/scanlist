@@ -1,3 +1,52 @@
 Scanlist 
 
 I regularly end up with random text files with lots of different notations of networks, and ip ranges from customers. This script aims to make cleanup and validation of ip addresses quick and easy. 
+
+Usage:
+
+ view the usage output 
+
+   shell$ python scanlist.py -h addresses.txt 
+   scanlist.py -i <inputfile>
+   shell$ 
+
+ select a file of addresses (included in the github repo for testing):
+
+   shell$ python scanlist.py -i addresses.txt 
+
+   valid ipv4 addresses
+   192.168.0.1
+   216.185.197.0
+   216.185.197.1
+   216.185.197.2
+   216.185.197.3
+   216.185.197.4
+   216.185.197.5
+   216.185.197.6
+   216.185.197.7
+   10.2.3.27
+   172.16.1.23
+   192.168.250.23
+   8.0.0.0
+   8.0.0.1
+   8.0.0.2
+   8.0.0.3
+   10.2.2.5
+   10.2.2.4
+   10.2.2.3
+   192.168.79.5
+   192.168.79.4
+   192.168.79.3
+   192.168.79.2
+   192.168.79.1
+   192.168.79.0
+   192.168.78.255
+   192.168.78.254
+   192.168.78.253
+
+   valid ipv6 addresses
+   2001:0DB8:AC10:FE01::
+   2001:db8::1
+
+   items that didn't validate:
+   shell$
