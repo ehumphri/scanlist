@@ -1,4 +1,5 @@
-# Scanlist 
+Scanlist 
+========
 
    I regularly end up with random text files with lots of different notations of networks, and ip ranges from customers. This script aims to make cleanup and validation of ip addresses quick and easy. 
 
