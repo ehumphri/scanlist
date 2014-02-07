@@ -59,11 +59,13 @@ Scanlist
 
 # Limitations
 
-   if you have a network in a list, and the host listed isn't the network address, it will not validate and it should be corrected.
+   if you have a network in a list, and the host listed isn't the network address, 
+   it will not validate and it should be corrected.
    
-   for example: 192.168.2.21/30 - the network address of the subnet is actually 192.168.2.20
+   for example: 192.168.2.21/30 - the network address of the subnet is actually 
+   192.168.2.20.
 
-   whatmask$ whatmask 192.168.2.21/30
+   shell$ whatmask 192.168.2.21/30
 
     ------------------------------------------------
                TCP/IP NETWORK INFORMATION

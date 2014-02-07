@@ -6,7 +6,8 @@
 import ipaddress
 from array import *
 import re
-import sys, getopt
+import sys, getopt, sys
+from stat import *
 
 def expandrange( range ):  #-------------------------------------
  netstart = unicode(range.split('-')[0].rstrip())
@@ -68,7 +69,6 @@ def main(argv): #-------------------------------------
 
 if __name__ == "__main__":
    filename = main(sys.argv[1:])
-  
 
 # create arrays that are going to store our ipaddresses
 validv4 = []
@@ -77,33 +77,39 @@ invalid = []
 
 # main()
 
-f = open(filename)
 
-for line in f:
+try:
+ f = open(filename)
+
+ for line in f:
 	match = re.search('-',line)
 	if match:
 		expandrange(line)
 	else:
 		validateip(line.rstrip());
 
-f.close()
+ f.close()
 
-if len(validv4) > 0:
- print "\nValid ipv4 addresses"
+ if len(validv4) > 0:
+  print "\nValid ipv4 addresses"
 
  for a in validv4:
 	print a
 
-if len(validv6) > 0:
- print "\nValid ipv6 addresses"
+ if len(validv6) > 0:
+  print "\nValid ipv6 addresses"
 
  for b in validv6:
 	print b
 
-if len(invalid) > 0:
- print "\nItems that didn't validate:"
- print "note: if the network doesn't start with the network address, it will not validate. "
+ if len(invalid) > 0:
+  print "\nItems that didn't validate:"
+  print "note: if the network doesn't start with the network address, it will not validate. "
 
  for c in invalid:
 	print c
+
+
+except Exception,e:
+ print " [-] ERROR: file " + filename + " does not exist"
 
