@@ -59,7 +59,27 @@ Scanlist
 
 # Limitations
 
-   probably a lot
+   if you have a network in a list, and the host listed isn't the network address, it will not validate and it should be corrected.
+   
+   for example: 192.168.2.21/30 - the network address of the subnet is actually 192.168.2.20
+
+   whatmask$ whatmask 192.168.2.21/30
+
+    ------------------------------------------------
+               TCP/IP NETWORK INFORMATION
+    ------------------------------------------------
+    IP Entered = ..................: 192.168.2.21
+    CIDR = ........................: /30
+    Netmask = .....................: 255.255.255.252
+    Netmask (hex) = ...............: 0xfffffffc
+    Wildcard Bits = ...............: 0.0.0.3
+    ------------------------------------------------
+>>> Network Address = .............: 192.168.2.20 <<<---- see?
+    Broadcast Address = ...........: 192.168.2.23
+    Usable IP Addresses = .........: 2
+    First Usable IP Address = .....: 192.168.2.21
+    Last Usable IP Address = ......: 192.168.2.22
+
 
 # Tested Operating Systems
 

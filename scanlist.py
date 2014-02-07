@@ -22,6 +22,7 @@ def expandrange( range ):  #-------------------------------------
   counter=counter+1
 
 def expandnetwork( network ): #-------------------------------------------
+ #print "potential network caught " + network
  try:
   ipaddress.IPv4Network(network.rstrip())
  except Exception,e:
@@ -37,7 +38,7 @@ def validateip( line ): #--------------------------------------------
   private = str(ipaddress.ip_address(ip).is_private)
   version = str(ipaddress.ip_address(ip).version)
  except Exception,e:
-  #invalid.append(ip)
+  # assume that if it isn't a valid IP, that it's a network
   expandnetwork(ip);
  else:
   if version == '4':
@@ -87,18 +88,22 @@ for line in f:
 
 f.close()
 
-print "\nvalid ipv4 addresses"
+if len(validv4) > 0:
+ print "\nValid ipv4 addresses"
 
-for a in validv4:
+ for a in validv4:
 	print a
 
-print "\nvalid ipv6 addresses"
+if len(validv6) > 0:
+ print "\nValid ipv6 addresses"
 
-for b in validv6:
+ for b in validv6:
 	print b
 
-print "\nitems that didn't validate:"
+if len(invalid) > 0:
+ print "\nItems that didn't validate:"
+ print "note: if the network doesn't start with the network address, it will not validate. "
 
-for c in invalid:
+ for c in invalid:
 	print c
 
