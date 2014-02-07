@@ -1,21 +1,21 @@
-#Scanlist 
+# Scanlist 
 
    I regularly end up with random text files with lots of different notations of networks, and ip ranges from customers. This script aims to make cleanup and validation of ip addresses quick and easy. 
 
-#Prerequesites / Installation
+# Prerequesites / Installation
 
    easy_install ipaddress
    copy the .py file to your system and run 
 
-#Usage:
+# Usage:
 
- ##view the usage output 
+ ## View the usage output 
 
    shell$ python scanlist.py -h addresses.txt 
    scanlist.py -i <inputfile>
    shell$ 
 
- ##select a file of addresses (included in the github repo for testing):
+ ## Select a file of addresses (included in the github repo for testing):
 
    shell$ python scanlist.py -i addresses.txt 
 
@@ -56,10 +56,10 @@
    items that didn't validate:
    shell$
 
-#Limitations
+# Limitations
 
    probably a lot
 
-#Tested Operating Systems
+# Tested Operating Systems
 
    OSX 10.9.1
