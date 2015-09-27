@@ -64,7 +64,7 @@ Scanlist
    
    for example: 192.168.2.21/30 - the network address of the subnet is actually 
    192.168.2.20.
-
+```
    shell$ whatmask 192.168.2.21/30
 
     ------------------------------------------------
@@ -81,6 +81,7 @@ Scanlist
     Usable IP Addresses = .........: 2
     First Usable IP Address = .....: 192.168.2.21
     Last Usable IP Address = ......: 192.168.2.22
+```
 
    probably many other limitations
 
