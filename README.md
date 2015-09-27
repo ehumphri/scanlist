@@ -4,20 +4,20 @@ Scanlist
    I regularly end up with random text files with lots of different notations of networks, and ip ranges from customers. This script aims to make cleanup and validation of ip addresses quick and easy. 
 
 # Prerequesites / Installation
-
+```
    easy_install ipaddress
    copy the .py file to your system and run 
-
+```
 # Usage:
 
  ## View the usage output 
-
+```
    shell$ python scanlist.py -h addresses.txt 
    scanlist.py -i <inputfile>
    shell$ 
-
+```
  ## Select a file of addresses (included in the github repo for testing):
-
+```
    shell$ python scanlist.py -i addresses.txt 
 
    valid ipv4 addresses
@@ -56,7 +56,7 @@ Scanlist
 
    items that didn't validate:
    shell$
-
+```
 # Limitations
 
    if you have a network in a list, and the host listed isn't the network address, 
