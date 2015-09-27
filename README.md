@@ -88,3 +88,4 @@ Scanlist
 # Tested Operating Systems
 
    OSX 10.9.1
+   OSX 10.10.5
