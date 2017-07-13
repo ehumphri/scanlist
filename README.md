@@ -86,6 +86,6 @@ Scanlist
    probably many other limitations
 
 # Tested Operating Systems
-
-   OSX 10.9.1
-   OSX 10.10.5
+- OSX 10.9.1
+- OSX 10.10.5
+- macOS 10.12.5
